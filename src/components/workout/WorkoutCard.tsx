@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 interface Exercise {
   name: string;
@@ -12,6 +13,7 @@ interface Exercise {
 }
 
 interface WorkoutCardProps {
+  id?: string;
   title: string;
   exercises: Exercise[];
   duration?: string;
@@ -19,7 +21,20 @@ interface WorkoutCardProps {
   onStart?: () => void;
 }
 
-const WorkoutCard = ({ title, exercises, duration, difficulty, onStart }: WorkoutCardProps) => {
+const WorkoutCard = ({ id, title, exercises, duration, difficulty, onStart }: WorkoutCardProps) => {
+  const navigate = useNavigate();
+  
+  const handleStart = () => {
+    if (onStart) {
+      onStart();
+    } else if (id) {
+      navigate(`/workout/${id}`);
+    } else {
+      // 生成一个默认ID
+      const workoutId = title.replace(/\s+/g, '-').toLowerCase();
+      navigate(`/workout/${workoutId}`);
+    }
+  };
   const difficultyColors = {
     "初级": "bg-fitness-success",
     "中级": "bg-fitness-warning", 
@@ -61,7 +76,7 @@ const WorkoutCard = ({ title, exercises, duration, difficulty, onStart }: Workou
         </div>
         
         <Button 
-          onClick={onStart}
+          onClick={handleStart}
           className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
         >
           开始训练

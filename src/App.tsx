@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Workouts from "./pages/Workouts";
 import Plans from "./pages/Plans";
 import Progress from "./pages/Progress";
+import WorkoutSession from "./pages/WorkoutSession";
 import Navigation from "./components/layout/Navigation";
 import NotFound from "./pages/NotFound";
 
@@ -22,6 +23,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/workouts" element={<Workouts />} />
+            <Route path="/workout/:workoutId" element={<WorkoutSession />} />
             <Route path="/plans" element={<Plans />} />
             <Route path="/progress" element={<Progress />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

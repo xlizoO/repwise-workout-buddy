@@ -9,6 +9,7 @@ const Workouts = () => {
 
   const recommendedWorkouts = [
     {
+      id: "chest-training",
       title: "胸部强化训练",
       exercises: [
         { name: "杠铃卧推", sets: 4, reps: "8-10", weight: 80 },
@@ -20,6 +21,7 @@ const Workouts = () => {
       difficulty: "中级" as const
     },
     {
+      id: "back-training",
       title: "背部塑形训练", 
       exercises: [
         { name: "引体向上", sets: 4, reps: "6-8" },
@@ -31,6 +33,7 @@ const Workouts = () => {
       difficulty: "高级" as const
     },
     {
+      id: "leg-training",
       title: "腿部基础训练",
       exercises: [
         { name: "深蹲", sets: 4, reps: "10-12", weight: 100 },
@@ -42,6 +45,7 @@ const Workouts = () => {
       difficulty: "中级" as const
     },
     {
+      id: "shoulder-training",
       title: "肩部雕刻训练",
       exercises: [
         { name: "肩部推举", sets: 4, reps: "8-10", weight: 25 },
@@ -56,6 +60,7 @@ const Workouts = () => {
 
   const customWorkouts = [
     {
+      id: "custom-upper",
       title: "我的上肢训练",
       exercises: [
         { name: "引体向上", sets: 3, reps: "5-8" },
@@ -109,7 +114,6 @@ const Workouts = () => {
               <WorkoutCard 
                 key={index} 
                 {...workout}
-                onStart={() => console.log(`开始${workout.title}`)}
               />
             ))}
           </>
@@ -125,7 +129,6 @@ const Workouts = () => {
               <WorkoutCard 
                 key={index} 
                 {...workout}
-                onStart={() => console.log(`开始${workout.title}`)}
               />
             ))}
             

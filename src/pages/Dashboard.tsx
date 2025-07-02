@@ -6,6 +6,7 @@ import fitnessHero from "@/assets/fitness-hero.jpg";
 
 const Dashboard = () => {
   const todayWorkout = {
+    id: "chest-shoulders-today",
     title: "胸部 + 三角肌",
     exercises: [
       { name: "杠铃卧推", sets: 4, reps: "8-10", weight: 80 },
@@ -60,7 +61,6 @@ const Dashboard = () => {
           <h2 className="text-xl font-semibold text-foreground mb-4">今日训练</h2>
           <WorkoutCard 
             {...todayWorkout}
-            onStart={() => console.log("开始训练")}
           />
         </div>
 
