@@ -61,12 +61,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				fitness: {
+					success: 'hsl(var(--fitness-success))',
+					warning: 'hsl(var(--fitness-warning))'
 				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'fitness-gradient': 'var(--fitness-gradient)',
+				'fitness-card': 'var(--fitness-card-gradient)'
 			},
 			keyframes: {
 				'accordion-down': {
